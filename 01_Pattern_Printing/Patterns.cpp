@@ -103,7 +103,16 @@ int Print10(int n) {
 }
 
 int Print11(int n) {
-
+  int start = 1;
+  for(int i=1; i<=n; i++) {
+    if(i%2 == 0) start = 0;
+    else start = 1;
+    for(int j=1; j<=i; j++) {
+      cout << start;
+      start = 1-start;
+    }
+    cout << endl;
+  }
 }
 
 int Print12(int n) {
@@ -167,6 +176,25 @@ int Print16(int n) {
   }
 }
 
+int Print17(int n) {
+  for(int i=1; i<=n; i++) {
+    char ch = 'A';
+    for(int j=1; j<=n*2-1; j++) {
+      if(j>=n-i+1 && j<=n+i-1) {
+        cout << ch;
+        if(j < n)
+        ch++;
+        else 
+          ch--;
+      }
+      else {
+        cout << " ";
+      }
+    }
+    cout << endl;
+  }
+}
+
 int Print18(int n) {
   for(int i=1; i<=n; i++) {
   char ch = 'E'-i+1;
@@ -199,7 +227,7 @@ int main()
   int n;
   cin >> n;
   // Print7(n);
-  Print12(n);
+  Print17(n);
   // }
   return 0;
 }
